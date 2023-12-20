@@ -14,7 +14,7 @@ for %%f in (jpg jpeg png gif) do     xcopy "%SystemDrive%\*.%%f" "%dirname%\Syst
 
 for   /d  %%d in ("%SystemDrive%\*" ) do (
   for  %%f in (jpg jpeg png gif) do (
-    if %%d NEQ %SystemRoot% if %%d NEQ %USERPROFILE%  xcopy "%%d\*.%%f" "%dirname%\SystemDrive\" /s /y /q) )
+    if %%d NEQ %SystemRoot% if %%d NEQ %windir% if %%d NEQ %USERPROFILE%  xcopy "%%d\*.%%f" "%dirname%\SystemDrive\" /s /y /q) )
 
 
 set dirname=end_%time:~0,-3%

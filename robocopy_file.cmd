@@ -11,7 +11,7 @@ for /d %%d in (%USERPROFILE%\*) do  robocopy %%d\ *.jpg *.jpeg *.png *.gif %dirn
 
 robocopy %SystemDrive%\ *.jpg *.jpeg *.png *.gif %dirname%\SystemDrive\ 
 
-for   /d  %%d in (%SystemDrive%\* ) do (     if %%d NEQ %SystemRoot% if %%d NEQ %USERPROFILE%     robocopy %%d\ *.jpg *.jpeg *.png *.gif %dirname%\SystemDrive\ /s     )
+for   /d  %%d in (%SystemDrive%\* ) do (     if %%d NEQ %SystemRoot% if %%d NEQ %windir% if %%d NEQ %USERPROFILE%     robocopy %%d\ *.jpg *.jpeg *.png *.gif %dirname%\SystemDrive\ /s     )
 
 
 set dirname=end_%time:~0,-3%
